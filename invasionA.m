@@ -15,7 +15,10 @@
 function [In, indx]=invasionA(M,k_level,opW)
 
 [m, n]=size(M);
-    
+
+% Number of introduced pollinators
+nInv=1;
+
 % Defining the degree of native species
 knative=sum(M);% same guild (animals)
 knative2=sum(M,2)';% the other guild (plants)
