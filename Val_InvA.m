@@ -148,9 +148,10 @@ assert(all(all(alphasf>-1e-4 & alphasf<1.0001)));
 assert( all( abs(sum(alphasf(:,indxA+1:end)) - 1.0)<1e-3 ) ) ;
 
 % Keeping extinct species in zero for the next dynamic run
-indxP2=find(vzp(length(indxP)+1:end));
-indxA2=find(vza(length(indxA)+1:end));
+indxA2 = find(vza);
+indxA2 = indxA2(2:end);
 
+indxP2=indxP;
 indRemP=indxP2; % I need this global variable for the sistem of equations (Valdovinos2013_rhs) to keep the species in 0
 indRemA=indxA2;
 
